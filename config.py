@@ -5,13 +5,10 @@ import os
 import sys
 
 # ===== Telegram =====
-# Ưu tiên env var, fallback về token đã biết để đề phòng Railway/Render env chưa cập nhật.
-_BOT_TOKEN_ENV = os.environ.get("BOT_TOKEN", "")
-if _BOT_TOKEN_ENV:
-    BOT_TOKEN = _BOT_TOKEN_ENV
-else:
-    print("[config] WARNING: BOT_TOKEN env var is EMPTY — using fallback token!", file=sys.stderr)
-    BOT_TOKEN = "8664729809:AAFGVBvefewYHShcQ30NWUKIoQ29vkUQ_2E"
+# Token CHỈ đọc từ env var — KHÔNG hardcode trong code (bảo mật).
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+if not BOT_TOKEN:
+    print("[config] WARNING: BOT_TOKEN env var is EMPTY!", file=sys.stderr)
 
 ADMIN_CHAT_ID = os.environ.get("ADMIN_CHAT_ID", "558789316")
 
