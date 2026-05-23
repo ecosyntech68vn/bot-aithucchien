@@ -35,14 +35,17 @@ PRODUCTS = {
     "mua_combo": {
         "name": "Combo Full Pack (Claude + OpenCode, 8 cấp)",
         "price": 199000,
+        "drive_link": "https://drive.google.com/file/d/1KC9PrlJ4hw0K0OwSPfLHXOuw96UcJ8eK/view?usp=sharing",
     },
     "mua_claude": {
         "name": "Claude AI Thực Chiến (4 cấp)",
         "price": 99000,
+        "drive_link": "https://drive.google.com/file/d/1Bs71fSnXNP2eXv8y0qh4I3jSiCcAkHsa/view?usp=sharing",
     },
     "mua_opencode": {
         "name": "OpenCode Thực Chiến (4 cấp)",
         "price": 149000,
+        "drive_link": "https://drive.google.com/file/d/1ioWrucdyGXpA7zvB1pUFKVYmsGaUU-5o/view?usp=sharing",
     },
 }
 

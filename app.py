@@ -37,6 +37,11 @@ log = logging.getLogger(__name__)
 app = Flask(__name__)
 TG_API = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
+# Security: Telegram sends this header on every webhook call when secret_token was
+# given to setWebhook. Verifying it blocks spoofed updates (e.g. forged admin
+# commands such as /set_link). Unset → check skipped (backward compatible).
+TELEGRAM_WEBHOOK_SECRET = os.environ.get("TELEGRAM_WEBHOOK_SECRET", "")
+
 # Startup validation
 if not BOT_TOKEN:
     log.critical("BOT_TOKEN is EMPTY — bot will NOT send any messages!")
@@ -605,6 +610,11 @@ def download_apk():
 @app.route("/telegram-webhook", methods=["POST"])
 def telegram_webhook():
     """Nhận update từ Telegram Bot API."""
+    # Reject spoofed requests: only Telegram knows the secret_token set via setWebhook.
+    if TELEGRAM_WEBHOOK_SECRET and \
+            request.headers.get("X-Telegram-Bot-Api-Secret-Token") != TELEGRAM_WEBHOOK_SECRET:
+        log.warning("Telegram webhook unauthorized: bad/missing secret token")
+        return jsonify({"ok": True}), 200
     update = request.get_json(silent=True) or {}
     log.info(f"TG update: {update.get('update_id')}")
 
