@@ -90,14 +90,11 @@ def _q(sql):
     return re.sub(r"(?<!\?)\?(?!\?)", "%s", sql)
 
 
-@contextmanager
-def conn():
-    c = _db()
-    try:
-        yield c
-        c.commit()
-    finally:
-        c.close()
+# NOTE: conn() is defined ONCE above and wraps the connection in _DB so that
+# c.execute() works on BOTH SQLite and PostgreSQL. A duplicate conn() that
+# yielded the raw connection used to live here and shadowed the real one,
+# crashing every query on Postgres ("'connection' object has no attribute
+# 'execute'"). Do NOT re-add a raw conn() here.
 
 
 def _exec(ddl_sqlite, ddl_pg=None):
