@@ -280,7 +280,7 @@ def handle_trang_thai(chat_id):
             f"*Đơn #{code}* — ✅ Đã thanh toán\n"
             f"Sản phẩm: {prod['name']}\n"
             f"Số tiền: {amount:,}đ\n\n"
-            f"*Link tải:* {link}\n\n"
+            f"📥 Link tải đã được gửi trong tin nhắn xác nhận thanh toán.\n"
             f"Cảm ơn anh/chị đã mua hàng! Chúc anh chị thực hành tốt 🎉"
         )
         tg_send(chat_id, text)
@@ -309,7 +309,7 @@ def handle_trang_thai(chat_id):
 def handle_lien_he(chat_id):
     text = (
         "*Kênh liên hệ trực tiếp anh Thuận:*\n\n"
-        "Email: thuanktqd.mba@gmail.com\n"
+        "☎️ Điện thoại: 0985438373\n📧 Email: thuanktqd.mba@gmail.com\n"
         "Giờ hỗ trợ: Chủ Nhật 9:00–12:00 (giờ Việt Nam)\n\n"
         "Khi nhắn, anh/chị gửi kèm:\n"
         "1. Mã đơn (nếu có)\n"
