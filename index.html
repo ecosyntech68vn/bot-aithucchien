@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Thực Chiến — Bộ tài liệu Claude AI &amp; OpenCode cho người Việt</title>
+<meta name="description" content="Bộ tài liệu thực chiến: Claude AI 4 cấp · OpenCode 4 cấp. Mua qua bot Telegram, nhận link tải tự động trong 30 giây. Trợ lý của anh Tạ Quang Thuận.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI Thực Chiến — Claude AI &amp; OpenCode cho người Việt">
+<meta property="og:description" content="Bộ tài liệu thực chiến, mua qua bot Telegram, giao link tự động trong 30 giây.">
+<meta property="og:url" content="https://ecosyntech68vn.github.io/bot-aithucchien/">
+<meta property="og:image" content="https://ecosyntech68vn.github.io/bot-aithucchien/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="AI Thực Chiến">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Thực Chiến — Claude AI &amp; OpenCode cho người Việt">
+<meta name="twitter:description" content="Bộ tài liệu thực chiến, mua qua bot Telegram, giao link tự động trong 30 giây.">
+<meta name="twitter:image" content="https://ecosyntech68vn.github.io/bot-aithucchien/og-image.png">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c-bg:#0f0a1f;
+  --c-bg-2:#1a1033;
+  --c-surface:#1f1442;
+  --c-surface-2:#2a1d52;
+  --c-border:rgba(192,38,211,0.18);
+  --c-primary:#6d28d9;
+  --c-primary-2:#c026d3;
+  --c-accent:#fbbf24;
+  --c-text:#f1edff;
+  --c-text-2:#b6a8df;
+  --c-text-3:#8a7cb3;
+  --c-green:#10b981;
+  --c-red:#f87171;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+  background:var(--c-bg);
+  color:var(--c-text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+/* Hero */
+.hero{
+  padding:80px 0 64px;
+  background:radial-gradient(circle at 20% 10%,rgba(192,38,211,0.18),transparent 50%),
+             radial-gradient(circle at 80% 30%,rgba(109,40,217,0.22),transparent 55%),
+             linear-gradient(180deg,#0f0a1f 0%,#1a1033 100%);
+  text-align:center;
+  position:relative;
+}
+.brand-row{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(192,38,211,0.10);
+  border:1px solid var(--c-border);
+  padding:8px 18px;border-radius:999px;
+  font-size:14px;color:var(--c-text-2);
+  margin-bottom:28px;
+}
+.brand-row .dot{width:8px;height:8px;border-radius:50%;background:var(--c-primary-2);box-shadow:0 0 12px var(--c-primary-2)}
+.hero h1{
+  font-size:clamp(32px,5.5vw,56px);
+  font-weight:800;line-height:1.15;
+  margin-bottom:20px;
+  background:linear-gradient(90deg,#f1edff 0%,#e0b3ff 50%,#fbbf24 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .sub{
+  font-size:clamp(17px,2.2vw,21px);
+  color:var(--c-text-2);
+  max-width:760px;margin:0 auto 36px;
+}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 28px;border-radius:12px;
+  font-size:16px;font-weight:600;
+  text-decoration:none;
+  transition:transform .15s ease,box-shadow .15s ease;
+  cursor:pointer;border:none;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--c-primary) 0%,var(--c-primary-2) 100%);
+  color:#fff;
+  box-shadow:0 8px 24px rgba(192,38,211,0.35);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(192,38,211,0.45)}
+.btn-secondary{
+  background:rgba(255,255,255,0.04);
+  color:var(--c-text);
+  border:1px solid var(--c-border);
+}
+.btn-secondary:hover{background:rgba(255,255,255,0.08)}
+.hero-note{font-size:14px;color:var(--c-text-3);margin-top:14px}
+
+/* Section base */
+section{padding:72px 0}
+section h2{
+  font-size:clamp(26px,3.6vw,38px);
+  font-weight:800;margin-bottom:14px;text-align:center;
+}
+section h2 .accent{
+  background:linear-gradient(90deg,var(--c-primary-2),var(--c-accent));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+section .lead{text-align:center;color:var(--c-text-2);font-size:17px;max-width:680px;margin:0 auto 48px}
+
+/* Pain */
+.pain{background:#0c0719}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.pain-card{
+  background:var(--c-surface);
+  border:1px solid var(--c-border);
+  padding:24px;border-radius:14px;
+}
+.pain-card .icon{font-size:28px;margin-bottom:10px}
+.pain-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.pain-card p{color:var(--c-text-2);font-size:15px}
+
+/* Solution */
+.sol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.sol-card{
+  background:linear-gradient(135deg,rgba(109,40,217,0.10),rgba(192,38,211,0.06));
+  border:1px solid var(--c-border);
+  padding:28px 24px;border-radius:16px;
+}
+.sol-card .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,var(--c-primary),var(--c-primary-2));
+  color:#fff;font-weight:700;font-size:18px;margin-bottom:14px;
+}
+.sol-card h3{font-size:19px;font-weight:700;margin-bottom:10px}
+.sol-card p{color:var(--c-text-2);font-size:15px}
+
+/* Process */
+.process{background:#0c0719}
+.flow{
+  background:var(--c-surface);
+  border:1px solid var(--c-border);
+  border-radius:16px;
+  padding:32px;
+  max-width:780px;margin:0 auto;
+}
+.step{display:flex;align-items:flex-start;gap:18px;padding:14px 0;border-bottom:1px dashed rgba(192,38,211,0.12)}
+.step:last-child{border-bottom:none}
+.step .n{
+  flex:0 0 36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--c-primary),var(--c-primary-2));
+  color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;
+}
+.step .body strong{display:block;margin-bottom:4px;font-size:16px}
+.step .body span{color:var(--c-text-2);font-size:14px}
+
+/* Pricing */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:stretch}
+.price-card{
+  background:var(--c-surface);
+  border:1px solid var(--c-border);
+  border-radius:16px;padding:28px 24px;
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.price-card.popular{
+  border-color:var(--c-primary-2);
+  background:linear-gradient(180deg,rgba(192,38,211,0.10),var(--c-surface) 60%);
+  box-shadow:0 8px 32px rgba(192,38,211,0.18);
+}
+.price-card .badge{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(90deg,var(--c-primary-2),var(--c-accent));
+  color:#1a1033;padding:5px 14px;border-radius:999px;
+  font-size:12px;font-weight:700;letter-spacing:0.3px;
+}
+.price-card h3{font-size:20px;font-weight:700;margin-bottom:8px}
+.price-card .desc{color:var(--c-text-2);font-size:14px;margin-bottom:18px;min-height:42px}
+.price-card .price{font-size:36px;font-weight:800;margin-bottom:4px}
+.price-card .price .currency{color:var(--c-primary-2);font-size:18px;font-weight:600;margin-left:4px}
+.price-card .save{color:var(--c-accent);font-size:14px;font-weight:600;margin-bottom:18px;min-height:20px}
+.price-card ul{list-style:none;margin-bottom:22px;flex:1}
+.price-card ul li{padding:6px 0;color:var(--c-text-2);font-size:14px;display:flex;gap:8px}
+.price-card ul li::before{content:"✓";color:var(--c-green);font-weight:700}
+.price-card .btn{width:100%;justify-content:center}
+
+/* Value stack */
+.value{background:#0c0719}
+.value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.value-item{
+  background:var(--c-surface);
+  border:1px solid var(--c-border);
+  padding:20px;border-radius:12px;
+  display:flex;gap:14px;align-items:flex-start;
+}
+.value-item .check{
+  flex:0 0 32px;height:32px;border-radius:50%;
+  background:rgba(16,185,129,0.15);color:var(--c-green);
+  display:flex;align-items:center;justify-content:center;font-weight:700;
+}
+.value-item strong{display:block;margin-bottom:4px;font-size:15px}
+.value-item span{color:var(--c-text-2);font-size:14px}
+
+/* FAQ */
+.faq-list{max-width:780px;margin:0 auto}
+.faq-item{
+  background:var(--c-surface);
+  border:1px solid var(--c-border);
+  border-radius:12px;
+  margin-bottom:12px;overflow:hidden;
+}
+.faq-item summary{
+  padding:18px 22px;cursor:pointer;font-weight:600;font-size:16px;
+  display:flex;justify-content:space-between;align-items:center;
+  list-style:none;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--c-primary-2);font-size:22px;font-weight:300;transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item .answer{padding:0 22px 18px;color:var(--c-text-2);font-size:15px}
+.faq-item .answer p{margin-bottom:8px}
+.faq-item .answer p:last-child{margin-bottom:0}
+
+/* Final CTA */
+.final-cta{
+  text-align:center;
+  background:linear-gradient(135deg,rgba(109,40,217,0.18),rgba(192,38,211,0.10));
+}
+.final-cta h2{margin-bottom:18px}
+.final-cta p{color:var(--c-text-2);font-size:17px;max-width:600px;margin:0 auto 28px}
+
+/* Footer */
+footer{
+  background:#080514;
+  padding:40px 0 32px;
+  border-top:1px solid var(--c-border);
+  text-align:center;
+}
+footer .links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+footer .links a{color:var(--c-text-2);text-decoration:none;font-size:14px;transition:color .15s}
+footer .links a:hover{color:var(--c-primary-2)}
+footer .copy{color:var(--c-text-3);font-size:13px;line-height:1.7}
+footer .disclaimer{margin-top:14px;font-size:12px;color:var(--c-text-3);max-width:680px;margin-left:auto;margin-right:auto}
+
+/* Mobile */
+@media (max-width:640px){
+  section{padding:56px 0}
+  .hero{padding:56px 0 48px}
+  .container{padding:0 18px}
+  .btn{padding:14px 22px;font-size:15px;width:100%}
+  .cta-row{flex-direction:column}
+  .flow{padding:22px}
+  .step{flex-direction:column;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="container">
+    <div class="brand-row">
+      <span class="dot"></span>
+      <span>Trợ lý bán hàng của anh Tạ Quang Thuận</span>
+    </div>
+    <h1>AI Thực Chiến — Claude &amp; OpenCode cho người Việt</h1>
+    <p class="sub">
+      Bộ tài liệu thực hành đã lọc, dịch và sắp lại theo tư duy người làm việc thật. Mua qua bot Telegram — tự động giao link tải trong 30 giây sau khi chuyển khoản.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://t.me/AIThucChienBot?start=mua_combo">
+        Mở bot Telegram &amp; xem sản phẩm →
+      </a>
+      <a class="btn btn-secondary" href="#pricing">
+        Xem báo giá
+      </a>
+    </div>
+    <p class="hero-note">Thanh toán MB Bank · Tự động qua Sepay · Hỗ trợ thủ công khi cần</p>
+  </div>
+</header>
+
+<!-- Pain -->
+<section class="pain" id="pain">
+  <div class="container">
+    <h2>Anh/chị đang ở đâu trên hành trình <span class="accent">làm việc với AI</span>?</h2>
+    <p class="lead">Đa số người Việt tiếp cận Claude và các CLI AI mới bằng cách lướt mảnh — video YouTube ngắn, post Facebook, vài prompt copy-paste. Kết quả: học mãi vẫn không dùng được vào việc thật.</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">🌀</div>
+        <h3>Tài liệu tản mác</h3>
+        <p>Anthropic docs viết bằng tiếng Anh. Blog tiếng Việt mỗi nơi một kiểu, nhiều bài quảng cáo trá hình.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">⏱️</div>
+        <h3>Tốn 3–6 tháng tự mò</h3>
+        <p>Không có lộ trình. Cứ nhảy từ prompt này sang prompt khác. Vẫn không biết bao giờ thành thạo.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">🔧</div>
+        <h3>OpenCode CLI khó tiếp cận</h3>
+        <p>Công cụ mạnh nhất hiện nay cho dev VN — nhưng gần như chưa có tài liệu tiếng Việt thực chiến.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solution -->
+<section id="solution">
+  <div class="container">
+    <h2>Giải pháp: <span class="accent">2 bộ tài liệu, 8 cấp độ, gói gọn</span></h2>
+    <p class="lead">Tôi viết lại từ kinh nghiệm thực tế dùng Claude và OpenCode mỗi ngày để vận hành công việc và sản phẩm. Mỗi cấp là một bài học cụ thể, làm xong là dùng được.</p>
+    <div class="sol-grid">
+      <div class="sol-card">
+        <div class="num">1</div>
+        <h3>Tư duy gốc, không phải mẹo vặt</h3>
+        <p>Hiểu mô hình Claude hoạt động như thế nào, vì sao prompt này hiệu quả, prompt kia không. Bỏ tâm lý cầu may.</p>
+      </div>
+      <div class="sol-card">
+        <div class="num">2</div>
+        <h3>Lộ trình 4 cấp rõ ràng</h3>
+        <p>Mỗi sản phẩm chia 4 cấp tăng dần. Đọc xong cấp 1 dùng được luôn, không cần đợi xong hết.</p>
+      </div>
+      <div class="sol-card">
+        <div class="num">3</div>
+        <h3>Tiếng Việt, ví dụ Việt</h3>
+        <p>Các tình huống công việc thực tế: viết email, lập kế hoạch, soạn báo cáo, code app nhỏ. Không phải dịch máy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="container">
+    <h2>Cách mua — <span class="accent">5 bước, 1 phút</span></h2>
+    <p class="lead">Hệ thống bot tự động. Không cần đăng ký tài khoản, không cần điền form.</p>
+    <div class="flow">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="body">
+          <strong>Mở bot Telegram</strong>
+          <span>Bấm nút "Mở bot" — Telegram mở luôn cuộc trò chuyện với bot bán hàng.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="body">
+          <strong>Chọn sản phẩm</strong>
+          <span>Combo 199k · Claude 99k · OpenCode 149k. Bấm nút sản phẩm muốn mua.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="body">
+          <strong>Quét QR thanh toán</strong>
+          <span>Bot gửi ảnh QR VietQR. Mở app ngân hàng (VCB / MB / MoMo / ZaloPay) → quét → xác nhận.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div class="body">
+          <strong>Nhận link tải tự động</strong>
+          <span>Trong vòng 30 giây sau khi tiền vào, bot gửi link Google Drive vào chat. Không phải chờ.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">5</div>
+        <div class="body">
+          <strong>Bắt đầu học ngay</strong>
+          <span>Tải về điện thoại hoặc laptop, đọc theo thứ tự cấp 1 → 4. Có vướng → /lien_he trong bot.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+  <div class="container">
+    <h2>Báo giá — <span class="accent">không phụ phí, không subscription</span></h2>
+    <p class="lead">Trả 1 lần, dùng vô hạn. Mọi cập nhật nội dung trong tương lai đều miễn phí cho người đã mua.</p>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <h3>Claude AI Thực Chiến</h3>
+        <p class="desc">4 cấp Claude — từ tư duy gốc đến tự động hóa công việc hàng ngày.</p>
+        <div class="price">99.000<span class="currency">đ</span></div>
+        <div class="save">&nbsp;</div>
+        <ul>
+          <li>4 cấp độ tăng dần</li>
+          <li>Prompt mẫu tiếng Việt</li>
+          <li>Tình huống công việc thật</li>
+          <li>Cập nhật miễn phí trọn đời</li>
+        </ul>
+        <a class="btn btn-secondary" href="https://t.me/AIThucChienBot?start=mua_claude">Mua Claude →</a>
+      </div>
+
+      <div class="price-card popular">
+        <span class="badge">⭐ Tiết kiệm 49k</span>
+        <h3>Combo Full Pack</h3>
+        <p class="desc">Trọn bộ Claude + OpenCode, 8 cấp. Lựa chọn được nhiều người chọn nhất.</p>
+        <div class="price">199.000<span class="currency">đ</span></div>
+        <div class="save">Tiết kiệm 49.000đ so với mua lẻ</div>
+        <ul>
+          <li>Toàn bộ 8 cấp (Claude 4 + OpenCode 4)</li>
+          <li>Prompt mẫu &amp; lệnh CLI tiếng Việt</li>
+          <li>Tình huống công việc thật</li>
+          <li>Cập nhật miễn phí trọn đời</li>
+          <li>Ưu tiên hỗ trợ qua Telegram</li>
+        </ul>
+        <a class="btn btn-primary" href="https://t.me/AIThucChienBot?start=mua_combo">Mua Combo →</a>
+      </div>
+
+      <div class="price-card">
+        <h3>OpenCode Thực Chiến</h3>
+        <p class="desc">4 cấp OpenCode CLI — công cụ code AI dòng lệnh dành cho dev.</p>
+        <div class="price">149.000<span class="currency">đ</span></div>
+        <div class="save">&nbsp;</div>
+        <ul>
+          <li>4 cấp độ tăng dần</li>
+          <li>Lệnh CLI mẫu thực tế</li>
+          <li>Workflow code nhanh hơn</li>
+          <li>Cập nhật miễn phí trọn đời</li>
+        </ul>
+        <a class="btn btn-secondary" href="https://t.me/AIThucChienBot?start=mua_opencode">Mua OpenCode →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Value stack -->
+<section class="value">
+  <div class="container">
+    <h2>Anh/chị nhận được gì <span class="accent">trong mỗi đơn</span></h2>
+    <p class="lead">Không phải PDF lậu chia sẻ trên Telegram. Đây là tài liệu được soạn riêng, có người chịu trách nhiệm.</p>
+    <div class="value-grid">
+      <div class="value-item">
+        <div class="check">✓</div>
+        <div>
+          <strong>Link Google Drive vĩnh viễn</strong>
+          <span>Tải về máy, đọc offline. Không bị mất khi đổi điện thoại.</span>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="check">✓</div>
+        <div>
+          <strong>Bản cập nhật miễn phí</strong>
+          <span>Mỗi lần tôi bổ sung nội dung, link Drive được thay → người mua tự thấy.</span>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="check">✓</div>
+        <div>
+          <strong>Hỗ trợ trực tiếp</strong>
+          <span>Vướng prompt nào, hỏi qua Telegram hoặc Zalo. Tôi trả lời.</span>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="check">✓</div>
+        <div>
+          <strong>Hoá đơn rõ ràng</strong>
+          <span>Mỗi đơn có mã TXN. Cần xuất biên nhận → liên hệ là có.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <h2>Hỏi &amp; đáp</h2>
+    <p class="lead">Những câu thường gặp nhất trước khi quyết định mua.</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Đây có phải khoá học không? Có video bài giảng không?</summary>
+        <div class="answer">
+          <p>Không. Đây là <strong>bộ tài liệu đọc</strong> dạng PDF / Markdown. Tôi cố ý không làm video vì video tốn thời gian, nội dung mau cũ, và đa số người làm việc không có 30 phút ngồi xem video — họ cần đọc nhanh, copy prompt, dùng ngay.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Mua xong nếu không hài lòng, có hoàn tiền không?</summary>
+        <div class="answer">
+          <p>Có. Trong 7 ngày kể từ khi mua, nếu anh/chị thấy nội dung không phù hợp, nhắn Telegram hoặc Zalo cho tôi — tôi hoàn lại 100% qua chuyển khoản, không hỏi lý do.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Tôi không rành kỹ thuật, đọc có hiểu không?</summary>
+        <div class="answer">
+          <p>Bộ <strong>Claude AI</strong> viết cho người làm văn phòng / kinh doanh / nội dung — không cần biết code. Bộ <strong>OpenCode</strong> dành cho dev và người đã quen làm việc với CLI. Nếu chỉ làm văn phòng, anh/chị chọn Claude AI 99k là đủ.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Sau khi chuyển khoản bao lâu nhận được link?</summary>
+        <div class="answer">
+          <p>Nếu bot ở chế độ tự động (Sepay) — khoảng <strong>30 giây</strong> sau khi tiền vào tài khoản. Nếu chế độ thủ công (ngoài giờ), tôi xác nhận trong vòng 3–10 phút trong khung giờ 9:00–22:00 mỗi ngày. Quá hạn, nhắn Zalo 0985438373 để tôi xử lý tay.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Bot có an toàn không? Có lộ thông tin không?</summary>
+        <div class="answer">
+          <p>Bot chạy trên Telegram chính chủ, mã nguồn công khai trên <a href="https://github.com/ecosyntech68vn/bot-aithucchien" target="_blank" rel="noopener" style="color:var(--c-primary-2)">GitHub</a> để bất cứ ai cũng kiểm tra được. Bot KHÔNG yêu cầu mật khẩu, không truy cập danh bạ, không hỏi mã OTP. Chỉ cần chat ID Telegram để gửi link tải.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Tôi có được dùng nội dung để bán lại không?</summary>
+        <div class="answer">
+          <p>Không. Nội dung mua chỉ dành cho cá nhân anh/chị. Việc bán lại, đăng public hoặc chia sẻ link Drive cho người khác là vi phạm. Phát hiện → khoá link Drive, không hoàn tiền.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Sẵn sàng bắt đầu?</h2>
+    <p>Bấm nút bên dưới, Telegram mở bot ngay. Nếu chưa cài Telegram, tải ở <a href="https://telegram.org/" style="color:var(--c-primary-2)" rel="noopener" target="_blank">telegram.org</a> — miễn phí, dùng số điện thoại đăng ký.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://t.me/AIThucChienBot?start=mua_combo">Mua Combo 199k →</a>
+      <a class="btn btn-secondary" href="https://t.me/AIThucChienBot">Mở bot xem trước</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="links">
+      <a href="https://t.me/ThuanFX" target="_blank" rel="noopener">Telegram @ThuanFX</a>
+      <a href="https://zalo.me/0985438373" target="_blank" rel="noopener">Zalo 0985438373</a>
+      <a href="mailto:thuanktqd.mba@gmail.com">thuanktqd.mba@gmail.com</a>
+      <a href="https://github.com/ecosyntech68vn/bot-aithucchien" target="_blank" rel="noopener">GitHub repo</a>
+    </div>
+    <div class="copy">
+      © 2026 AI Thực Chiến · Tạ Quang Thuận<br>
+      <!-- EcoSynTech Global · sản phẩm đang trong quá trình đăng ký bản quyền -->
+      Bộ tài liệu Claude AI &amp; OpenCode cho người Việt
+    </div>
+    <p class="disclaimer">
+      <!-- Trang này là một sản phẩm thuộc hệ sinh thái EcoSynTech Global (đang trong giai đoạn đăng ký bản quyền). -->
+      Mọi giao dịch thực hiện qua bot Telegram chính chủ. Bot không bao giờ chủ động yêu cầu mật khẩu, OTP, hoặc mã CVV ngân hàng.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
